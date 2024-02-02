@@ -16,6 +16,6 @@ body {
 }
 .blueColor {
   background-color: blue !important;
-  color: wheat;
+  color: rgb(190, 177, 151);
   transition: .5s;
 }

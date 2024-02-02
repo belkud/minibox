@@ -1,6 +1,7 @@
 import './style.css'
 
 let summ = 0
+let deg = 0
 var isPaused = false;
 const square = document.querySelector('#square') as HTMLDivElement
 square.addEventListener ('click', ()=> {
@@ -10,24 +11,33 @@ square.addEventListener ('click', ()=> {
       //   square.style.backgroundColor = 'blue'
       // }
       
-      square.classList.toggle('blueColor')
+      // square.classList.toggle('blueColor')
       
       if(!isPaused){
-    setInterval(()=>{
-      // let x = (getComputedStyle(document.body).height)
-      square.style.left = `${Math.round(Math.random()*100) + '%'}`
-      square.style.top = `${Math.random()*100 + '%'}`
-      square.innerHTML = `
-      ${summ++} <br>
-      ${square.style.marginLeft}
-      `
-       
-      console.log(Math.round(Math.random()*100) );
+        setInterval(()=>{
+          square.style.left = `${Math.round(Math.random()*100) + '%'}`
+          square.style.top = `${Math.random()*100 + '%'}`
+          let x = deg++
+          square.style.rotate = x*90+'deg'
+          console.log(x);
+          
+
+          square.innerHTML = `
+          ${summ++} <br>
+          ${square.style.marginLeft}
+          `
+          
+          let color = Math.round(Math.random()*255)
+          let color2 = Math.round(Math.random()*255)
+          let color3 = Math.round(Math.random()*255)
+          
+          square.style.transition = 1 +'s'
+          square.style.backgroundColor = `rgb(${color}, ${color2}, ${color3})`
       
       
 
 
-    },500)
+    },3000)
 		isPaused = true;
 	} else {
     isPaused = false;
@@ -36,7 +46,9 @@ square.addEventListener ('click', ()=> {
   
 })
 
-console.log(getComputedStyle(document.body).height)
-console.log(getComputedStyle(document.body).width)
+// console.log(getComputedStyle(document.body).height)
+// console.log(getComputedStyle(document.body).width)
 
 
+setInterval (()=>{
+},1000)
