@@ -1,0 +1,21 @@
+body {
+  background-color:antiquewhite;
+  margin: 0px;
+  width: 100vh;
+  height: 100%;
+}
+
+#square {
+  background-color: red;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  position: absolute;
+}
+.blueColor {
+  background-color: blue !important;
+  color: wheat;
+  transition: .5s;
+}
