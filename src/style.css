@@ -18,21 +18,42 @@ body {
   left: 50px;
   cursor: pointer;
 }
-
+#square {
+transition: 1s !important;
+}
 #ball {
   background:linear-gradient(45deg, blue, red);
   border-radius: 50%;
-  transition: 1s;
-  /* animation: jump 2s cubic-bezier(0.445, 0.05, 0.55, 0.95)  alternate infinite; */
-  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+  transition: 4s;
 }
   @keyframes jump {
-    from {
+    0% {
       top: 100px;
     }
-    to {
-      top: 690px;
 
+    40% {
+      background:linear-gradient(45deg, blue, red);
+    }
+    
+    50% {
+      top: 690px;
+      background: red; 
+      /* height: 100px; */
+    }
+    
+    60% {
+      background:linear-gradient(45deg, blue, red);
+
+      }
+ 
+      
+
+    90% { 
+
+    }
+
+    100% {
+      top: 100px;
     }
   }
 
@@ -45,5 +66,5 @@ body {
   transition-timing-function: linear !important;
   margin-top: 550px;
   left: 3%;
-  transition: 1s;
+  transition: 4s;
 }
