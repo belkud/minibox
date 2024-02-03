@@ -5,16 +5,19 @@ let deg = 0
 var isPaused = false;
 
 //! Рандомное перемещение
-let color = Math.round(Math.random()*255)
-let color2 = Math.round(Math.random()*255)
-let color3 = Math.round(Math.random()*255)
+
 const square = document.querySelector('#square') as HTMLDivElement
 square.addEventListener ('click', ()=> {
-
-      if(!isPaused){
-        setInterval(()=>{
+  
+  if(!isPaused){
+    setInterval(()=>{
+          let color = Math.round(Math.random()*255)
+          let color2 = Math.round(Math.random()*255)
+          let color3 = Math.round(Math.random()*255)
           square.style.left = `${Math.round(Math.random()*100) + '%'}`
           square.style.top = `${Math.random()*100 + '%'}`
+          console.log(square.style.left);
+          console.log(square.style.top);
           
           let rotatesquare = deg++
           square.style.rotate = rotatesquare*90+'deg'
@@ -22,7 +25,9 @@ square.addEventListener ('click', ()=> {
     
           square.style.transition = 1 +'s'
           square.style.background = `linear-gradient(rgb(${color}, ${color2}, ${color3}), rgb(${color2}, ${color3}, ${color}))`
-        },1000)
+          console.log(square.style.background);
+          
+        },3000)
         
         isPaused = true;
       } else {
@@ -37,6 +42,7 @@ square.addEventListener ('click', ()=> {
 const ball = document.querySelector('#ball') as HTMLDivElement
 const line = document.querySelector('#line') as HTMLDivElement
 ball.addEventListener ('click', ()=> {
+  ball.style.animation =  'jump 1s cubic-bezier(0.445, 0.05, 0.55, 0.95) 1s alternate infinite'
   setInterval ( ()=>{
     let digital = Math.round(Math.random()*100) 
     deg++
@@ -45,7 +51,7 @@ ball.addEventListener ('click', ()=> {
     line.style.left = digital + '%'
 
     console.log(deg);
-  },3000)
+  },1000)
 
 
 })
