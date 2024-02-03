@@ -48,13 +48,15 @@ ball.addEventListener ('click', ()=> {
   setInterval ( ()=>{
     let digital = Math.round(Math.random()*100) 
     deg2++
-    ball.style.rotate = deg2*65 + 'deg'
+    ball.style.rotate = deg2*360 + 'deg'
     ball.style.left = digital + '%'
     line.style.left = digital + '%'
-
-    console.log(deg);
+    console.log(ball.style.rotate);
+    
   },4000)
 }, {once:true})
+
+
 
 
 
@@ -64,9 +66,6 @@ let name = ['aa', 'bb', 'cc', 'dd', 'ee']
 const list = document.querySelector('#list') as HTMLDivElement
 list.addEventListener('click', ()=> {
 for (let i = 0; i < name.length; i++) {
-  console.log(name[i], age[i]);
   list.innerHTML += `${name[i]}_${age[i]}  `
-  
 }
-  // list.innerHTML = `${age} ${name}`
 },{once:true})

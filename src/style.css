@@ -23,7 +23,7 @@ transition: 2s;
 }
 
 #ball {
-  background:linear-gradient(45deg, blue, red);
+  background:linear-gradient(90deg, blue, red);
   border-radius: 50%;
   transition: 4s;
 }
@@ -35,16 +35,18 @@ transition: 2s;
 
     40% {
       background:linear-gradient(45deg, blue, red);
+      width: 120px;
     }
     
     50% {
-      top: 690px;
+      top: 705px;
       background: red; 
-      /* height: 100px; */
+      width:100px;
     }
     
     60% {
       background:linear-gradient(45deg, blue, red);
+      width: 120px;
       }
 
     100% {
