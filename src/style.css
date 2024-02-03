@@ -1,5 +1,4 @@
 body {
-  /* margin: 0px; */
   width: 100vh;
   height: 100%;
   background:lightgrey;
@@ -18,15 +17,18 @@ body {
   left: 50px;
   cursor: pointer;
 }
+
 #square {
-transition: 1s !important;
+transition: 2s;
 }
+
 #ball {
   background:linear-gradient(45deg, blue, red);
   border-radius: 50%;
   transition: 4s;
 }
   @keyframes jump {
+
     0% {
       top: 100px;
     }
@@ -43,18 +45,12 @@ transition: 1s !important;
     
     60% {
       background:linear-gradient(45deg, blue, red);
-
       }
- 
-      
-
-    90% { 
-
-    }
 
     100% {
       top: 100px;
     }
+
   }
 
 #line {

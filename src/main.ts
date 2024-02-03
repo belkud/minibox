@@ -54,9 +54,19 @@ ball.addEventListener ('click', ()=> {
 
     console.log(deg);
   },4000)
-
-
-})
+}, {once:true})
 
 
 
+let age = [10, 14, 20, 45, 23]
+let name = ['aa', 'bb', 'cc', 'dd', 'ee']
+
+const list = document.querySelector('#list') as HTMLDivElement
+list.addEventListener('click', ()=> {
+for (let i = 0; i < name.length; i++) {
+  console.log(name[i], age[i]);
+  list.innerHTML += `${name[i]}_${age[i]}  `
+  
+}
+  // list.innerHTML = `${age} ${name}`
+},{once:true})
