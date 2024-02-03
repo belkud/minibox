@@ -15,8 +15,6 @@ square.addEventListener ('click', ()=> {
         setInterval(()=>{
           square.style.left = `${Math.round(Math.random()*100) + '%'}`
           square.style.top = `${Math.random()*100 + '%'}`
-          console.log(square.style.left);
-          console.log(square.style.top);
           
           let rotatesquare = deg++
           square.style.rotate = rotatesquare*90+'deg'
