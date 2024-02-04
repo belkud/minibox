@@ -38,13 +38,18 @@ transition: 2s;
       width: 120px;
     }
     
+    45% {
+      top: 705px;
+      background: red; 
+      width:100px;
+    }
     50% {
       top: 705px;
       background: red; 
       width:100px;
     }
     
-    60% {
+    65% {
       background:linear-gradient(45deg, blue, red);
       width: 120px;
       }
@@ -65,4 +70,29 @@ transition: 2s;
   margin-top: 550px;
   left: 3%;
   transition: 4s;
+}
+
+#list, #list2{
+  margin-top: 250px; 
+  cursor: pointer;
+  width: 120px;
+  background-color: rgb(7, 167, 167);
+  padding: 10px;
+  border-radius: 5px;
+  color: aliceblue;
+  text-align: center;
+}
+
+#columns, #columns2 {
+  display: flex;
+  color: aliceblue;
+  gap: 10px;
+  margin-top: 150px;
+  position: absolute;
+}
+
+#columns>div, #columns2>div { 
+  background-color: brown;
+  padding-left: 20px;
+  padding-right: 20px;
 }

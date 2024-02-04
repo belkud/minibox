@@ -45,6 +45,8 @@ const line = document.querySelector('#line') as HTMLDivElement
 let deg2 = 0
 ball.addEventListener ('click', ()=> {
   ball.style.animation =  'jump 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) 2s alternate infinite'
+  ball.style.rotate = 90 + 'deg'
+  // ball.style.transition = 1 + 's'
   setInterval ( ()=>{
     let digital = Math.round(Math.random()*100) 
     deg2++
@@ -60,12 +62,24 @@ ball.addEventListener ('click', ()=> {
 
 
 
-let age = [10, 14, 20, 45, 23]
-let name = ['aa', 'bb', 'cc', 'dd', 'ee']
-
+let age = [10, 14, 20, 45, 23, 55, 28]
 const list = document.querySelector('#list') as HTMLDivElement
+// const columns = document.querySelectorAll <HTMLDivElement> ('#columns') 
+
+
+
+
+//! через class
+const recs = document.querySelectorAll  ('.rec') as NodeListOf<HTMLDivElement>
+
 list.addEventListener('click', ()=> {
-for (let i = 0; i < name.length; i++) {
-  list.innerHTML += `${name[i]}_${age[i]}  `
-}
-},{once:true})
+  for (let i = 0; i < age.length; i++) {
+    recs[i].innerHTML = `${age[i]}`
+    recs[i].style.marginTop = -`${age[i]*2}` + 'px'
+    recs[i].style.transition = 2 + 's'
+   
+ 
+  }
+})
+
+// ,{once:true}
