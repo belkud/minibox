@@ -4,7 +4,7 @@ body {
   background:lightgrey;
 }
 
-#square, #ball {
+#square, #ball, #info, #info2 {
   background:linear-gradient(45deg, red, blue);
   width: 120px;
   height: 120px;
@@ -16,6 +16,7 @@ body {
   color: rgb(190, 177, 151);
   left: 50px;
   cursor: pointer;
+  transition: 4s;
 }
 
 #square {
@@ -25,8 +26,29 @@ transition: 2s;
 #ball {
   background:linear-gradient(90deg, blue, red);
   border-radius: 50%;
-  transition: 4s;
 }
+#info {
+  background:none !important;
+  color: black;
+  margin-left: 150px;
+  margin-top: -50px;
+  min-width: 120px;
+  font-size: 1.2em;
+  
+}
+#info2 {
+  background:none !important;
+  color: black;
+  margin-left: 100px;
+  margin-top: -15px;
+  min-width: 200px;
+  font-size: 1.2em;
+}
+
+
+
+
+
   @keyframes jump {
 
     0% {
@@ -72,7 +94,7 @@ transition: 2s;
   transition: 4s;
 }
 
-#list2, #list {
+ #button, #button2 {
   margin-top: 250px; 
   cursor: pointer;
   width: 120px;
@@ -81,23 +103,29 @@ transition: 2s;
   border-radius: 5px;
   color: aliceblue;
   text-align: center;
+  z-index: 10;
 }
-
 
 
 #columns, #columns2 {
   display: flex;
   color: aliceblue;
   gap: 10px;
-  margin-top: 150px;
+  margin-top: 200px;
   position: absolute;
 }
 
+#columns2  {
+  padding-bottom: 1000px;
+
+}
+
 #columns>div, #columns2>div { 
+  margin: 0px;
   background-color: brown;
   padding-left: 10px;
   padding-right: 10px;
-  min-width: 16px;
+  min-width: 18px;
   text-align: center;
 }
 
