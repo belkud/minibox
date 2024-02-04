@@ -67,19 +67,24 @@ const list = document.querySelector('#list') as HTMLDivElement
 // const columns = document.querySelectorAll <HTMLDivElement> ('#columns') 
 
 
-
+let score = 0
 
 //! через class
 const recs = document.querySelectorAll  ('.rec') as NodeListOf<HTMLDivElement>
 
 list.addEventListener('click', ()=> {
   for (let i = 0; i < age.length; i++) {
-    recs[i].innerHTML = `${age[i]}`
     recs[i].style.marginTop = -`${age[i]*2}` + 'px'
-    recs[i].style.transition = 2 + 's'
-   
- 
+    recs[i].style.transition = 3 + 's'
+    
+    setInterval ( ()=> {
+      score+=1      
+      recs[i].innerHTML = `${Math.round(score/7)}`
+        if (recs[i].innerHTML>=age[i]) {
+          recs[i].innerHTML=age[i]
+        } 
+    }, 60)
   }
 })
-
+// `${age[i]}`
 // ,{once:true}
