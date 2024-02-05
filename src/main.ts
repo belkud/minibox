@@ -134,30 +134,30 @@ button2.addEventListener ('click', ()=> {
 
 
 //! Крестики нолики
-const cross = document.querySelector ('#cross') as NodeListOf<HTMLDivElement>
-
+const cross = document.querySelector ('#cross')  as HTMLDivElement
+                                                    // NodeListOf<HTMLDivElement>
 cross.addEventListener('click', (event)=>{
+  cell.classList.add('lightGreen')
   let cell = event.target as HTMLDivElement
-  if (cell[0].innerHTML  =='X') {
-    cell.innerHTML  ='Y'
-    alert ('вы выиграли')
-  } else {
-    cell.innerHTML  ='X'
-  }
-
-
-
-  // let cell2 = cell.dataset.set as HTMLDivElement
- 
-  //  for (let i = 0; i < 9; i++) {
-  //   if (cross.children[i].innerHTML=='X') {
-  //     cross.children[i].innerHTML = 'Y'
-  //   } else {
-  //     cross.children[i].innerHTML='X'
-  //   }
-  //   console.log(cross.children[i] );
-  // }
+  if (cell.innerHTML  =='X') {
+      cell.innerHTML  ='O'
+    } else {
+        cell.innerHTML  ='X'
+      }
     
+      // let cell2 = cell.dataset.set
+      // console.log(cell2);
+      
+      
+      // for (let i = 0; i < 9; i++) {
+        if (cross.children[3].innerHTML=='X') {
+          cross.children[3].innerHTML = 'Y'
+        } else {
+          cross.children[3].innerHTML='X'
+        // }
+      }
+      
+      cross.style.background = 'pink'
    
 
     // cell.innerHTML  = `${Math.random()}`
