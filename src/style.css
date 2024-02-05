@@ -39,11 +39,32 @@ transition: 2s;
 #info2 {
   background:none !important;
   color: black;
-  margin-left: 100px;
+  padding-left: 100px !important;
   margin-top: -15px;
   min-width: 200px;
   font-size: 1.2em;
+  text-align: center;
+  /* border: 1px solid #000; */
+  display: flex;
 }
+
+#cross {
+  background-color: aliceblue;
+  display: flex;
+  width: 306px;
+  height: 306px;
+  flex-wrap: wrap;
+  border: 1px solid #070707;
+}
+#cross>div {
+  border: 1px solid #070707;
+  width: 100px;
+  height: 100px;
+  
+}
+
+
+
 
 
 
