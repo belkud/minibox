@@ -137,13 +137,13 @@ button2.addEventListener ('click', ()=> {
 const cross = document.querySelector ('#cross')  as HTMLDivElement
                                                     // NodeListOf<HTMLDivElement>
 cross.addEventListener('click', (event)=>{
-  cell.classList.add('lightGreen')
-  let cell = event.target as HTMLDivElement
-  if (cell.innerHTML  =='X') {
-      cell.innerHTML  ='O'
-    } else {
-        cell.innerHTML  ='X'
-      }
+  // cell.classList.add('lightGreen')
+  // let cell = event.target as HTMLDivElement
+  // if (cell.innerHTML  =='X') {
+    //   cell.innerHTML  ='O'
+    // } else {
+      //   cell.innerHTML  ='X'
+      // }
     
       // let cell2 = cell.dataset.set
       // console.log(cell2);
