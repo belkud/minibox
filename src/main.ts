@@ -33,8 +33,7 @@ square.addEventListener ('click', ()=> {
         isPaused = false;
       }
     })
-    
-    // console.log(getComputedStyle(document.body).height)
+     
   
 
     
@@ -97,6 +96,7 @@ let score = 0
 const recs = document.querySelectorAll  ('.rec') as NodeListOf<HTMLDivElement>
 
 button.addEventListener('click', ()=> {
+  button.classList.toggle('zero')
   for (let i = 0; i < age.length; i++) {
     recs[i].style.marginTop = -`${age[i]*3}` + 'px'
     recs[i].style.transition = 3.5 + 's'
@@ -133,7 +133,43 @@ button2.addEventListener ('click', ()=> {
 })
 
 
+//! Крестики нолики
+const cross = document.querySelector ('#cross') as NodeListOf<HTMLDivElement>
 
-// const columns = document.querySelectorAll <HTMLDivElement> ('#columns') 
-// `${age[i]}`
-// ,{once:true}
+cross.addEventListener('click', (event)=>{
+  let cell = event.target as HTMLDivElement
+  if (cell[0].innerHTML  =='X') {
+    cell.innerHTML  ='Y'
+    alert ('вы выиграли')
+  } else {
+    cell.innerHTML  ='X'
+  }
+
+
+
+  // let cell2 = cell.dataset.set as HTMLDivElement
+ 
+  //  for (let i = 0; i < 9; i++) {
+  //   if (cross.children[i].innerHTML=='X') {
+  //     cross.children[i].innerHTML = 'Y'
+  //   } else {
+  //     cross.children[i].innerHTML='X'
+  //   }
+  //   console.log(cross.children[i] );
+  // }
+    
+   
+
+    // cell.innerHTML  = `${Math.random()}`
+
+
+
+   
+  
+
+})
+
+//  cross.firstElem entChild.style.background = 'red'
+//  console.log(cross.children[5].innerHTML = 'Y');
+ 
+
