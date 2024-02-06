@@ -137,39 +137,47 @@ button2.addEventListener ('click', ()=> {
 const cross = document.querySelector ('#cross')  as HTMLDivElement
                                                     // NodeListOf<HTMLDivElement>
 cross.addEventListener('click', (event)=>{
-  // cell.classList.add('lightGreen')
-  // let cell = event.target as HTMLDivElement
-  // if (cell.innerHTML  =='X') {
-    //   cell.innerHTML  ='O'
-    // } else {
-      //   cell.innerHTML  ='X'
-      // }
-    
-      // let cell2 = cell.dataset.set
-      // console.log(cell2);
-      
-      
-      // for (let i = 0; i < 9; i++) {
-        if (cross.children[3].innerHTML=='X') {
-          cross.children[3].innerHTML = 'Y'
-        } else {
-          cross.children[3].innerHTML='X'
-        // }
+  let cell = event.target as HTMLDivElement
+  cell.classList.add('lightGreen')
+  if (cell.innerHTML  =='X') {
+      cell.innerHTML  ='O'
+    } else {
+        cell.innerHTML  ='X'
       }
-      
-      cross.style.background = 'pink'
-   
 
-    // cell.innerHTML  = `${Math.random()}`
+      if (cross.children[3].innerHTML=='X' && cross.children[4].innerHTML=='X') {
+        console.log('Поздравляем');
+        
+      }
+      // let z = innerHTML
+    // console.log(cross.children[3].innerHTML=='X');
+    console.log(cell.innerHTML);
+    
 
 
 
-   
-  
+  // let cell = event.target
+  // let cell2 = cell.dataset.set as null
+  //     console.log(cell);
+  //     console.log(cell2);
+  //     let number = cross.children
+  //     if (cross.children[1].innerHTML == 'X') {
+  //       // alert('Поздавляем')
+  //     }
 
-})
+  // for (let i = 0; i < 9; i++) {
+  //   if (cross.children[i].innerHTML=='X') {
+  //     cell.innerHTML  ='O'
+  //     cross.children[i].innerHTML='O'
+  //   } else {
+  //     cross.children[i].innerHTML='X'
+  // } 
+  // }
+     
+       
 
-//  cross.firstElem entChild.style.background = 'red'
-//  console.log(cross.children[5].innerHTML = 'Y');
+    })
+
+
  
 
