@@ -75,8 +75,20 @@ transition: 2s;
   /* color: red; */
 }
 
-
-
+#statistic {
+  /* background-color:antiquewhite; */
+  /* gap: 20px !important; */
+}
+#statistic>div {
+  background-color:antiquewhite;
+  margin: 10px;
+  padding: 10px;
+  width: 160px;
+}
+#statistic>div>div {
+  background-color:antiquewhite;
+  padding: 5px;
+}
 
 
 

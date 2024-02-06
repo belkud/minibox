@@ -135,7 +135,15 @@ button2.addEventListener ('click', ()=> {
 
 //! Крестики нолики
 const cross = document.querySelector ('#cross')  as HTMLDivElement
+const player1 = document.querySelector ('#player1')  as HTMLDivElement
+const player2 = document.querySelector ('#player2')  as HTMLDivElement
+const nobody = document.querySelector ('#nobody')  as HTMLDivElement
                                                     // NodeListOf<HTMLDivElement>
+
+
+
+  let score1 = 1
+  // let score2 = 1
 cross.addEventListener('click', (event)=>{
   let cell = event.target as HTMLDivElement
   cell.classList.add('lightGreen')
@@ -143,31 +151,57 @@ cross.addEventListener('click', (event)=>{
       cell.innerHTML  ='O'
     } else {
         cell.innerHTML  ='X'
-      }
+    }
 
-      if (cross.children[3].innerHTML=='X' && cross.children[4].innerHTML=='X') {
-        console.log('Поздравляем');
+  let num = cross.children
+    if (num[0].innerHTML=='X' && num[1].innerHTML=='X' && num[2].innerHTML=='X' ||
+        num[3].innerHTML=='X' && num[4].innerHTML=='X' && num[5].innerHTML=='X' ||
+        num[6].innerHTML=='X' && num[7].innerHTML=='X' && num[8].innerHTML=='X' ||
+        num[0].innerHTML=='X' && num[3].innerHTML=='X' && num[6].innerHTML=='X' ||
+        num[1].innerHTML=='X' && num[4].innerHTML=='X' && num[7].innerHTML=='X' ||
+        num[2].innerHTML=='X' && num[5].innerHTML=='X' && num[8].innerHTML=='X' ||
+        num[0].innerHTML=='X' && num[4].innerHTML=='X' && num[8].innerHTML=='X' ||
+        num[2].innerHTML=='X' && num[4].innerHTML=='X' && num[6].innerHTML=='X'
+        ) {
+          setTimeout(() => {
+            confirm('Поздравляем игрок Х выиграл');
+            for (let i = 0; i < 9; i++) {
+              cross.children[i].innerHTML = ''
+              cross.children[i].classList.remove('lightGreen')
+            }
+            player1.innerHTML = `${score1++}`
+          }, 100);
+          
+        }
+        console.log(cross.children);
         
-      }
-      // let z = innerHTML
-    // console.log(cross.children[3].innerHTML=='X');
-    console.log(cell.innerHTML);
-    
 
 
 
-  // let cell = event.target
-  // let cell2 = cell.dataset.set as null
-  //     console.log(cell);
-  //     console.log(cell2);
-  //     let number = cross.children
-  //     if (cross.children[1].innerHTML == 'X') {
-  //       // alert('Поздавляем')
-  //     }
 
-  // for (let i = 0; i < 9; i++) {
-  //   if (cross.children[i].innerHTML=='X') {
-  //     cell.innerHTML  ='O'
+
+
+
+
+        
+        // let z = innerHTML
+        // console.log(cross.children[3].innerHTML=='X');
+        
+        
+        
+        
+        // let cell = event.target
+        // let cell2 = cell.dataset.set as null
+        //     console.log(cell);
+        //     console.log(cell2);
+        //     let number = cross.children
+        //     if (cross.children[1].innerHTML == 'X') {
+          //       // alert('Поздавляем')
+          //     }
+          
+          // for (let i = 0; i < 9; i++) {
+            //   if (cross.children[i].innerHTML=='X') {
+              //     cell.innerHTML  ='O'
   //     cross.children[i].innerHTML='O'
   //   } else {
   //     cross.children[i].innerHTML='X'
