@@ -50,7 +50,7 @@ ball.addEventListener ('click', ()=> {
   ball.style.animation =  'jump 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) 2s alternate infinite'
   info.style.animation =  'jump 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) 2s alternate infinite'
   info2.style.animation =  'jump 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) 2s alternate infinite'
-  ball.style.rotate = 90 + 'deg'
+  ball.style.rotate = 0 + 'deg'
   // ball.style.transition = 1 + 's'
   setInterval ( ()=>{
     let digital = Math.round(Math.random()*100) 
@@ -133,6 +133,8 @@ button2.addEventListener ('click', ()=> {
 })
 
 
+
+
 //! Крестики нолики
 const cross = document.querySelector ('#cross')  as HTMLDivElement
 const player1 = document.querySelector ('#player1')  as HTMLDivElement
@@ -143,7 +145,8 @@ const nobody = document.querySelector ('#nobody')  as HTMLDivElement
 
 
   let score1 = 1
-  // let score2 = 1
+  let score2 = 1
+  let score3 = 1
 cross.addEventListener('click', (event)=>{
   let cell = event.target as HTMLDivElement
   cell.classList.add('lightGreen')
@@ -164,54 +167,50 @@ cross.addEventListener('click', (event)=>{
         num[2].innerHTML=='X' && num[4].innerHTML=='X' && num[6].innerHTML=='X'
         ) {
           setTimeout(() => {
-            confirm('Поздравляем игрок Х выиграл');
+            alert('Поздравляем игрок 1 выиграл');
             for (let i = 0; i < 9; i++) {
               cross.children[i].innerHTML = ''
               cross.children[i].classList.remove('lightGreen')
             }
             player1.innerHTML = `${score1++}`
           }, 100);
-          
         }
-        console.log(cross.children);
+
+    else if (num[0].innerHTML=='O' && num[1].innerHTML=='O' && num[2].innerHTML=='O' ||
+        num[3].innerHTML=='O' && num[4].innerHTML=='O' && num[5].innerHTML=='O' ||
+        num[6].innerHTML=='O' && num[7].innerHTML=='O' && num[8].innerHTML=='O' ||
+        num[0].innerHTML=='O' && num[3].innerHTML=='O' && num[6].innerHTML=='O' ||
+        num[1].innerHTML=='O' && num[4].innerHTML=='O' && num[7].innerHTML=='O' ||
+        num[2].innerHTML=='O' && num[5].innerHTML=='O' && num[8].innerHTML=='O' ||
+        num[0].innerHTML=='O' && num[4].innerHTML=='O' && num[8].innerHTML=='O' ||
+        num[2].innerHTML=='O' && num[4].innerHTML=='O' && num[6].innerHTML=='O'
+        ) {
+          setTimeout(() => {
+            alert('Поздравляем игрок 2 выиграл');
+            for (let i = 0; i < 9; i++) {
+              cross.children[i].innerHTML = ''
+              cross.children[i].classList.remove('lightGreen')
+            }
+            player2.innerHTML = `${score2++}`
+          }, 100);
+        }
+        else {
+          setTimeout(() => {
+            for (let i = 0; i < 9; i++) {
+              cross.children[i].innerHTML == '5'
+              // cross.children[i].classList.remove('lightGreen')
+            }
+            // alert('Ничья');
+              
+            nobody.innerHTML = `${score3++}`
+        }, 100);
         
-
-
-
-
-
-
-
-
-        
-        // let z = innerHTML
-        // console.log(cross.children[3].innerHTML=='X');
-        
-        
-        
-        
-        // let cell = event.target
-        // let cell2 = cell.dataset.set as null
-        //     console.log(cell);
-        //     console.log(cell2);
-        //     let number = cross.children
-        //     if (cross.children[1].innerHTML == 'X') {
-          //       // alert('Поздавляем')
-          //     }
-          
-          // for (let i = 0; i < 9; i++) {
-            //   if (cross.children[i].innerHTML=='X') {
-              //     cell.innerHTML  ='O'
-  //     cross.children[i].innerHTML='O'
-  //   } else {
-  //     cross.children[i].innerHTML='X'
-  // } 
-  // }
-     
-       
-
+      }
+      console.log(cross.childNodes.forEach.toString());
+      
+      
     })
-
 
  
 
+ 
