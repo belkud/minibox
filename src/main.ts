@@ -50,8 +50,8 @@ ball.addEventListener ('click', ()=> {
   ball.style.animation =  'jump 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) 2s alternate infinite'
   info.style.animation =  'jump 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) 2s alternate infinite'
   info2.style.animation =  'jump 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) 2s alternate infinite'
-  ball.style.rotate = 0 + 'deg'
-  // ball.style.transition = 1 + 's'
+  // ball.style.rotate = 110 + 'deg'
+
   setInterval ( ()=>{
     let digital = Math.round(Math.random()*100) 
     deg2++
@@ -64,12 +64,9 @@ ball.addEventListener ('click', ()=> {
     info.innerHTML = `
     количество:
     оборотов: ${deg2}
-    
-    
-    `
-    console.log(ball.style.rotate);
-    
+    `   
   },4000)
+
   setTimeout (()=> {
     setInterval ( ()=> {
       sec++
@@ -77,7 +74,6 @@ ball.addEventListener ('click', ()=> {
       отскоков: ${sec} 
       `
     },2000)
-
   },1000)
 }, {once:true})
 
@@ -87,6 +83,7 @@ ball.addEventListener ('click', ()=> {
 
 
 
+//! графики
 
 const button = document.querySelector('#button') as HTMLDivElement
 let age = [10, 14, 20, 45, 23, 55, 28]
@@ -197,7 +194,7 @@ cross.addEventListener('click', (event)=>{
         else {
           setTimeout(() => {
             for (let i = 0; i < 9; i++) {
-              cross.children[i].innerHTML == '5'
+              cross.children[i].innerHTML != ''
               // cross.children[i].classList.remove('lightGreen')
             }
             // alert('Ничья');
@@ -206,7 +203,6 @@ cross.addEventListener('click', (event)=>{
         }, 100);
         
       }
-      console.log(cross.childNodes.forEach.toString());
       
       
     })
