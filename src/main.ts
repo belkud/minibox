@@ -138,19 +138,29 @@ const player1 = document.querySelector ('#player1')  as HTMLDivElement
 const player2 = document.querySelector ('#player2')  as HTMLDivElement
 const nobody = document.querySelector ('#nobody')  as HTMLDivElement
                                                     // NodeListOf<HTMLDivElement>
+  let move = true
+  move = !move
+  const simbol = {
+    true: 'X',
+    false: 'O'
+  } as any
 
 
-
+  console.log(simbol[String(move)])
+  
   let score1 = 1
   let score2 = 1
   let score3 = 1
 cross.addEventListener('click', (event)=>{
   let cell = event.target as HTMLDivElement
   cell.classList.add('lightGreen')
-  if (cell.innerHTML  =='X') {
-      cell.innerHTML  ='O'
-    } else {
-        cell.innerHTML  ='X'
+  if (move) {
+    !move
+    console.log(1);
+    
+  } else {
+    move
+    console.log(2);
     }
 
   let num = cross.children
@@ -194,7 +204,7 @@ cross.addEventListener('click', (event)=>{
         else {
           setTimeout(() => {
             for (let i = 0; i < 9; i++) {
-              cross.children[i].innerHTML != ''
+              // cross.children[i].innerHTML != ''
               // cross.children[i].classList.remove('lightGreen')
             }
             // alert('Ничья');
