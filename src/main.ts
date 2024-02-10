@@ -219,4 +219,25 @@ cross.addEventListener('click', (event)=>{
 
  
 
- 
+//  function name(params:type) {
+  
+//  }
+
+const changeDigital = document.querySelector('.mainButton') as HTMLDivElement
+changeDigital.addEventListener ('click',()=> {
+  console.log(changeDigital);
+  let x = changeDigital.style
+  console.log(x);
+  
+  
+  
+  if (x.backgroundColor == 'red') {
+    x.backgroundColor = 'blue'
+    
+    
+  } else {
+    x.backgroundColor = 'red'
+  }
+  
+})
+

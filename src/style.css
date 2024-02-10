@@ -69,6 +69,10 @@ transition: 2s;
   cursor: pointer;
 }
 
+/* .symbol {
+
+} */
+
 .lightGreen {
   background: chartreuse;
   /* content: 'Y' ; */
@@ -173,6 +177,27 @@ transition: 2s;
   min-width: 18px;
   text-align: center;
 }
+
+
+.mainButton {
+  background-color: chocolate;
+  width: 200px;
+  display: flex;
+  border: 1px solid #675656;
+  /* flex-wrap: wrap; */
+}
+.extraButton {
+  color: aliceblue;
+  border: 1px solid #675656;
+  width: 200px;
+  padding: 10px;
+  text-align: center;
+}
+
+
+
+
+
 
 
 @media screen and (max-width:560px) {
