@@ -132,7 +132,7 @@ button2.addEventListener ('click', ()=> {
 
 
 
-//! Крестики нолики
+// ! Крестики нолики
 const cross = document.querySelector ('#crossAndZero')  as HTMLDivElement
 const player1 = document.querySelector ('#player1')  as HTMLDivElement
 const player2 = document.querySelector ('#player2')  as HTMLDivElement
@@ -170,10 +170,7 @@ cross.addEventListener('click', (event)=>{
       simbol[String(move)]='X'
       // console.log(2);
     }
-  
-
-
-
+   
   let cell = event.target as HTMLDivElement
   cell.innerHTML = simbol[String(move)]
   cell.classList.add('lightGreen')
@@ -181,11 +178,7 @@ cross.addEventListener('click', (event)=>{
     cell.style.pointerEvents = 'block'
     console.log(555);
   }
-  
-  
-  
-
-
+   
 
   if (num[0].innerHTML=='X' && num[1].innerHTML=='X' && num[2].innerHTML=='X' ||
   num[3].innerHTML=='X' && num[4].innerHTML=='X' && num[5].innerHTML=='X' ||
@@ -199,7 +192,7 @@ cross.addEventListener('click', (event)=>{
     setTimeout(() => {
       alert('Поздравляем игрок 1 выиграл');
       for (let i = 0; i < 9; i++) {
-        document.location.reload()        
+        cross.children[i].innerHTML = ''        
         cross.children[i].classList.remove('lightGreen')
       }
       player1.innerHTML = `${score1++}`
@@ -227,24 +220,23 @@ cross.addEventListener('click', (event)=>{
   else {
     step++
     setTimeout(() => {
-      // if (step>=9) {
-      //   alert('Ничья');
-      //   cell.innerHTML = ''
-      // }
+      if (step>=9) {
+        alert('Ничья');
+        for (let i = 0; i < 9; i++) {
+                cross.children[i].innerHTML = ''
+                cross.children[i].classList.remove('lightGreen')
+                // document.location.reload()
+                step=0
+              }
+      }
 
-      console.log(step);
-      for (let i = 0; i < 9; i++) {
-              // cross.children[i].innerHTML = ''
-              // cross.children[i].classList.remove('lightGreen')
-            }
-            
-            nobody.innerHTML = `${score3++}`
-          }, 100);
-          
-        }
-        
-
-        
+      
+      nobody.innerHTML = `${score3++}`
+    }, 100);
+    
+  }
+  console.log(step);
+  
       })
        
 
@@ -261,10 +253,6 @@ changeDigital.addEventListener ('click',(event)=> {
   console.log(event.target);
   let x = changeDigital.style
 
-  
-  
-  
-  
   if (x.backgroundColor == 'red') {
     x.backgroundColor = 'blue'
     
