@@ -144,90 +144,105 @@ const nobody = document.querySelector ('#nobody')  as HTMLDivElement
     true: 'X',
     false: 'O'
   } as any
+console.log(move);
+console.log(simbol[String(move)])
 
 
-  console.log(simbol[String(move)])
-  
-  let score1 = 1
-  let score2 = 1
-  let score3 = 1
+let score1 = 1
+let score2 = 1
+let score3 = 1
+let step = ''
+
+
 cross.addEventListener('click', (event)=>{
+
+    if (simbol[String(move)]=='X') {
+      simbol[String(move)]='O'
+      console.log(1);
+      
+    } else {
+      simbol[String(move)]='X'
+      console.log(2);
+    }
+  
   let cell = event.target as HTMLDivElement
   cell.classList.add('lightGreen')
-  if (move) {
-    !move
-    console.log(1);
-    
-  } else {
-    move
-    console.log(2);
-    }
-
+  
+  
+  
   let num = cross.children
-    if (num[0].innerHTML=='X' && num[1].innerHTML=='X' && num[2].innerHTML=='X' ||
-        num[3].innerHTML=='X' && num[4].innerHTML=='X' && num[5].innerHTML=='X' ||
-        num[6].innerHTML=='X' && num[7].innerHTML=='X' && num[8].innerHTML=='X' ||
-        num[0].innerHTML=='X' && num[3].innerHTML=='X' && num[6].innerHTML=='X' ||
-        num[1].innerHTML=='X' && num[4].innerHTML=='X' && num[7].innerHTML=='X' ||
-        num[2].innerHTML=='X' && num[5].innerHTML=='X' && num[8].innerHTML=='X' ||
-        num[0].innerHTML=='X' && num[4].innerHTML=='X' && num[8].innerHTML=='X' ||
-        num[2].innerHTML=='X' && num[4].innerHTML=='X' && num[6].innerHTML=='X'
-        ) {
-          setTimeout(() => {
-            alert('Поздравляем игрок 1 выиграл');
-            for (let i = 0; i < 9; i++) {
-              cross.children[i].innerHTML = ''
-              cross.children[i].classList.remove('lightGreen')
-            }
-            player1.innerHTML = `${score1++}`
-          }, 100);
-        }
 
-    else if (num[0].innerHTML=='O' && num[1].innerHTML=='O' && num[2].innerHTML=='O' ||
-        num[3].innerHTML=='O' && num[4].innerHTML=='O' && num[5].innerHTML=='O' ||
-        num[6].innerHTML=='O' && num[7].innerHTML=='O' && num[8].innerHTML=='O' ||
-        num[0].innerHTML=='O' && num[3].innerHTML=='O' && num[6].innerHTML=='O' ||
-        num[1].innerHTML=='O' && num[4].innerHTML=='O' && num[7].innerHTML=='O' ||
-        num[2].innerHTML=='O' && num[5].innerHTML=='O' && num[8].innerHTML=='O' ||
-        num[0].innerHTML=='O' && num[4].innerHTML=='O' && num[8].innerHTML=='O' ||
-        num[2].innerHTML=='O' && num[4].innerHTML=='O' && num[6].innerHTML=='O'
-        ) {
-          setTimeout(() => {
-            alert('Поздравляем игрок 2 выиграл');
-            for (let i = 0; i < 9; i++) {
-              cross.children[i].innerHTML = ''
-              cross.children[i].classList.remove('lightGreen')
-            }
-            player2.innerHTML = `${score2++}`
-          }, 100);
-        }
-        else {
-          setTimeout(() => {
-            for (let i = 0; i < 9; i++) {
+
+      
+
+
+
+  if (num[0].innerHTML=='X' && num[1].innerHTML=='X' && num[2].innerHTML=='X' ||
+  num[3].innerHTML=='X' && num[4].innerHTML=='X' && num[5].innerHTML=='X' ||
+  num[6].innerHTML=='X' && num[7].innerHTML=='X' && num[8].innerHTML=='X' ||
+  num[0].innerHTML=='X' && num[3].innerHTML=='X' && num[6].innerHTML=='X' ||
+  num[1].innerHTML=='X' && num[4].innerHTML=='X' && num[7].innerHTML=='X' ||
+  num[2].innerHTML=='X' && num[5].innerHTML=='X' && num[8].innerHTML=='X' ||
+  num[0].innerHTML=='X' && num[4].innerHTML=='X' && num[8].innerHTML=='X' ||
+  num[2].innerHTML=='X' && num[4].innerHTML=='X' && num[6].innerHTML=='X'
+  ) {
+    setTimeout(() => {
+      alert('Поздравляем игрок 1 выиграл');
+      for (let i = 0; i < 9; i++) {
+        cross.children[i].innerHTML = ''
+        cross.children[i].classList.remove('lightGreen')
+      }
+      player1.innerHTML = `${score1++}`
+    }, 100);
+  }
+  
+  else if (num[0].innerHTML=='O' && num[1].innerHTML=='O' && num[2].innerHTML=='O' ||
+  num[3].innerHTML=='O' && num[4].innerHTML=='O' && num[5].innerHTML=='O' ||
+  num[6].innerHTML=='O' && num[7].innerHTML=='O' && num[8].innerHTML=='O' ||
+  num[0].innerHTML=='O' && num[3].innerHTML=='O' && num[6].innerHTML=='O' ||
+  num[1].innerHTML=='O' && num[4].innerHTML=='O' && num[7].innerHTML=='O' ||
+  num[2].innerHTML=='O' && num[5].innerHTML=='O' && num[8].innerHTML=='O' ||
+  num[0].innerHTML=='O' && num[4].innerHTML=='O' && num[8].innerHTML=='O' ||
+  num[2].innerHTML=='O' && num[4].innerHTML=='O' && num[6].innerHTML=='O'
+  ) {
+    setTimeout(() => {
+      alert('Поздравляем игрок 2 выиграл');
+      for (let i = 0; i < 9; i++) {
+        cross.children[i].innerHTML = ''
+        cross.children[i].classList.remove('lightGreen')
+      }
+      player2.innerHTML = `${score2++}`
+    }, 100);
+  }
+  else {
+    setTimeout(() => {
+      for (let i = 0; i < 9; i++) {
               // cross.children[i].innerHTML != ''
               // cross.children[i].classList.remove('lightGreen')
             }
             // alert('Ничья');
-              
+            
             nobody.innerHTML = `${score3++}`
-        }, 100);
+          }, 100);
+          
+        }
         
-      }
+
+        
+      })
       
       
-    })
-
- 
-
-//  function name(params:type) {
-  
-//  }
+      
+      //  function name(params:type) {
+        
+        //  }
 
 const changeDigital = document.querySelector('.mainButton') as HTMLDivElement
-changeDigital.addEventListener ('click',()=> {
-  console.log(changeDigital);
+changeDigital.addEventListener ('click',(event)=> {
+  console.log(event.target.closest('.div'));
   let x = changeDigital.style
-  console.log(x);
+
+  
   
   
   
