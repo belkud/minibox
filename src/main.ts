@@ -133,11 +133,13 @@ button2.addEventListener ('click', ()=> {
 
 
 //! Крестики нолики
-const cross = document.querySelector ('#cross')  as HTMLDivElement
+const cross = document.querySelector ('#crossAndZero')  as HTMLDivElement
 const player1 = document.querySelector ('#player1')  as HTMLDivElement
 const player2 = document.querySelector ('#player2')  as HTMLDivElement
 const nobody = document.querySelector ('#nobody')  as HTMLDivElement
-                                                    // NodeListOf<HTMLDivElement>
+
+
+  //! переключение между 'X' и 'О'
   let move = true
   move = !move
   const simbol = {
@@ -151,29 +153,37 @@ console.log(simbol[String(move)])
 let score1 = 1
 let score2 = 1
 let score3 = 1
-let step = ''
+let step = 0
 
 
 cross.addEventListener('click', (event)=>{
+  let num = cross.children
+
+  
+    
 
     if (simbol[String(move)]=='X') {
       simbol[String(move)]='O'
-      console.log(1);
+      // console.log(1);
       
     } else {
       simbol[String(move)]='X'
-      console.log(2);
+      // console.log(2);
     }
   
+
+
+
   let cell = event.target as HTMLDivElement
+  cell.innerHTML = simbol[String(move)]
   cell.classList.add('lightGreen')
+  if (cell.innerHTML = simbol[String(move)]){
+    cell.style.pointerEvents = 'block'
+    console.log(555);
+  }
   
   
   
-  let num = cross.children
-
-
-      
 
 
 
@@ -189,7 +199,7 @@ cross.addEventListener('click', (event)=>{
     setTimeout(() => {
       alert('Поздравляем игрок 1 выиграл');
       for (let i = 0; i < 9; i++) {
-        cross.children[i].innerHTML = ''
+        document.location.reload()        
         cross.children[i].classList.remove('lightGreen')
       }
       player1.innerHTML = `${score1++}`
@@ -215,12 +225,18 @@ cross.addEventListener('click', (event)=>{
     }, 100);
   }
   else {
+    step++
     setTimeout(() => {
+      // if (step>=9) {
+      //   alert('Ничья');
+      //   cell.innerHTML = ''
+      // }
+
+      console.log(step);
       for (let i = 0; i < 9; i++) {
-              // cross.children[i].innerHTML != ''
+              // cross.children[i].innerHTML = ''
               // cross.children[i].classList.remove('lightGreen')
             }
-            // alert('Ничья');
             
             nobody.innerHTML = `${score3++}`
           }, 100);
@@ -230,16 +246,19 @@ cross.addEventListener('click', (event)=>{
 
         
       })
-      
-      
-      
-      //  function name(params:type) {
-        
-        //  }
+       
+
+
+
+
+
+
+
+
 
 const changeDigital = document.querySelector('.mainButton') as HTMLDivElement
 changeDigital.addEventListener ('click',(event)=> {
-  console.log(event.target.closest('.div'));
+  console.log(event.target);
   let x = changeDigital.style
 
   

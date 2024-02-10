@@ -49,7 +49,7 @@ transition: 2s;
   display: flex;
 }
 
-#cross {
+#crossAndZero {
   background-color: aliceblue;
   display: flex;
   width: 306px;
@@ -57,7 +57,7 @@ transition: 2s;
   flex-wrap: wrap;
   border: 1px solid #070707;
 }
-#cross>div {
+#crossAndZero>div {
   border: 1px solid #070707;
   width: 100px;
   height: 100px;
@@ -67,17 +67,15 @@ transition: 2s;
   align-items: center;
   font-size: 3em;
   cursor: pointer;
+  /* pointer-events:initial; */
 }
 
-/* .symbol {
-
-} */
+#crossAndZero>div:hover {
+  background-color: rgb(211, 230, 246);
+}
 
 .lightGreen {
   background: chartreuse;
-  /* content: 'Y' ; */
-  /* font-size: 2em; */
-  /* color: red; */
 }
 
 #statistic {
