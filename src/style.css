@@ -179,19 +179,29 @@ transition: 2s;
 
 .mainButton {
   background-color: chocolate;
-  width: 200px;
+  width: 288px;
   display: flex;
   border: 1px solid #675656;
   /* flex-wrap: wrap; */
 }
 .extraButton {
   color: aliceblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: 1px solid #675656;
-  width: 200px;
+  /* width: 200px; */
   padding: 10px;
   text-align: center;
+  min-height: 50px;
+  min-width: 50px;
+  cursor: pointer;
 }
+.extraButton:hover {
+  transition:  .3s;
+  background-color: rgb(220, 134, 73);
 
+}
 
 
 

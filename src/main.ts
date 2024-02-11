@@ -321,11 +321,7 @@ const cross = document.querySelectorAll ('#crossAndZero')
 
 
 
-const letter = document.querySelector('#letter') as HTMLDivElement
-
-
-
-
+let friendInfo = 0
 
 const changeDigital = document.querySelectorAll('.extraButton') 
 // const changeDigital = document.querySelector('.mainButton') 
@@ -333,34 +329,52 @@ let scores = 0
 
 for (let elem of changeDigital) {
   
-function check() {
+    function check() {
   if (scores%2==0) {
     elem.innerHTML = 'X'
   } else {
     elem.innerHTML = 'Y'
   }
   scores++
-  if (scores==4) {
+  if (scores>=4) {
     console.log('ничья!');
-    setTimeout(() => {
-      document.location.reload()
-      
-    }, 500);
-    // scores =0
+    scores =0
+    friendInfo++
+    
   }
   elem.removeEventListener('click', check)
   console.log(scores);
-  letter.innerHTML=  `${scores}`
-  // changeDigital.
+
 }
 
 
 elem.addEventListener ('click', check)
 
+const letter = document.querySelector('#letter') as HTMLDivElement
+ letter.addEventListener ('click', ()=> {
+  letter.innerHTML = `${friendInfo}`
+  console.log(scores);
+  elem.addEventListener('click', check)
+   for (let i = 0; i < changeDigital.length; i++) {
+     console.log(changeDigital[i].innerHTML = '');
+     
+     
+  }
+})
+
+
+
 }
 
- let peremennay = document.querySelectorAll('.extraButton') as NodeList
 
+
+
+
+
+
+
+ let peremennay = document.querySelectorAll('.extraButton') as NodeList
+  
   for (let i = 0; i < peremennay.length; i++) {
       peremennay[i].innerHTML = ''  
   }
