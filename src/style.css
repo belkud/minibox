@@ -179,7 +179,7 @@ transition: 2s;
 
 .mainButton {
   /* background-color: chocolate; */
-  width: 215px;
+  width: 216px;
   display: flex;
   border: 1px solid #675656;
   /* border: 1px solid aliceblue; */
@@ -202,9 +202,13 @@ transition: 2s;
   min-width: 50px;
   cursor: pointer;
 }
+.rotation {
+  rotate: 180deg;
+  transition: 2s !important;
+}
 .extraButton:hover {
   transition:  .3s;
-  background-color: rgb(246, 148, 148);
+  background-color: rgba(248, 117, 117, 0.5);
   /* background-color: rgb(220, 134, 73); */
 }
 

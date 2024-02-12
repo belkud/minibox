@@ -4,7 +4,7 @@ let summ = 0
 let deg = 0
 var isPaused = false;
 
-//! Рандомное перемещение
+//! Рандомное перемещение квадрата
 
 const square = document.querySelector('#square') as HTMLDivElement
 square.addEventListener ('click', ()=> {
@@ -321,13 +321,26 @@ const cross = document.querySelectorAll ('#crossAndZero')
 
 
 
+
 let friendInfo = 0
 
 const changeDigital = document.querySelectorAll('.extraButton') 
 const person1 = document.querySelector('.person1') as HTMLDivElement
 const person2 = document.querySelector('.person2') as HTMLDivElement
 
-// const changeDigital = document.querySelector('.mainButton') 
+const combination = [
+  [0, 1, 2],
+  [3, 4, 5],
+  [6, 7, 8],
+  [0, 3, 6],
+  [1, 4, 7],
+  [2, 5, 8],
+  [0, 4, 8],
+  [2, 4, 6]
+]
+
+console.log(combination);
+
 let scores = 0 
 
 for (let elem of changeDigital) {
@@ -335,8 +348,10 @@ for (let elem of changeDigital) {
     function check() {
   if (scores%2==0) {
     elem.innerHTML = 'X'
+    elem.classList.add('rotation')
   } else {
-    elem.innerHTML = 'Y'
+    elem.innerHTML = 'О'
+    elem.classList.add('rotation')
   }
   scores++
   if (scores>=9) {
