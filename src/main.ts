@@ -336,27 +336,31 @@ for (let elem of changeDigital) {
     elem.innerHTML = 'Y'
   }
   scores++
-  if (scores>=4) {
-    console.log('ничья!');
+  if (scores>=9) {
+    // console.log('ничья!');
     scores =0
     friendInfo++
     
   }
+  letter.innerHTML = `${friendInfo}`
   elem.removeEventListener('click', check)
-  console.log(scores);
+  // console.log(scores);
+  // console.log('friendInfo', `${friendInfo}`);
 
 }
 
 
 elem.addEventListener ('click', check)
 
+const start = document.querySelector('#start') as HTMLDivElement
 const letter = document.querySelector('#letter') as HTMLDivElement
- letter.addEventListener ('click', ()=> {
-  letter.innerHTML = `${friendInfo}`
-  console.log(scores);
+
+start.addEventListener ('click', ()=> {
+ 
+  scores =0
   elem.addEventListener('click', check)
    for (let i = 0; i < changeDigital.length; i++) {
-     console.log(changeDigital[i].innerHTML = '');
+     changeDigital[i].innerHTML = ''
      
      
   }
