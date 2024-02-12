@@ -324,6 +324,9 @@ const cross = document.querySelectorAll ('#crossAndZero')
 let friendInfo = 0
 
 const changeDigital = document.querySelectorAll('.extraButton') 
+const person1 = document.querySelector('.person1') as HTMLDivElement
+const person2 = document.querySelector('.person2') as HTMLDivElement
+
 // const changeDigital = document.querySelector('.mainButton') 
 let scores = 0 
 

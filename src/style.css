@@ -178,12 +178,13 @@ transition: 2s;
 
 
 .mainButton {
-  background-color: chocolate;
+  /* background-color: chocolate; */
   width: 215px;
   display: flex;
   border: 1px solid #675656;
   flex-wrap: wrap;
   margin-top: 25px;
+  background-color: red;
 }
 .extraButton {
   color: aliceblue;
@@ -201,7 +202,8 @@ transition: 2s;
 }
 .extraButton:hover {
   transition:  .3s;
-  background-color: rgb(220, 134, 73);
+  background-color: rgb(246, 148, 148);
+  /* background-color: rgb(220, 134, 73); */
 }
 
 #start {
