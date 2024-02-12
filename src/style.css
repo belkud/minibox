@@ -182,6 +182,7 @@ transition: 2s;
   width: 215px;
   display: flex;
   border: 1px solid #675656;
+  /* border: 1px solid aliceblue; */
   flex-wrap: wrap;
   margin-top: 25px;
   background-color: red;
@@ -193,6 +194,7 @@ transition: 2s;
   justify-content: center;
   align-items: center;
   border: 1px solid #675656;
+  /* border: 1px solid aliceblue; */
   /* width: 200px; */
   padding: 10px;
   text-align: center;
