@@ -325,13 +325,13 @@ const cross = document.querySelectorAll ('#crossAndZero')
 //! Крестики нолики 2.0
 
 
-let friendInfo = 0
 
+const mainButton = document.querySelector('.mainButton') as HTMLDivElement
 const changeDigital = document.querySelectorAll('.extraButton') 
 const person1 = document.querySelector('#person1') as HTMLDivElement
 const person2 = document.querySelector('#person2') as HTMLDivElement
 
-let combination = [
+let combo = [
   [0, 1, 2],
   [3, 4, 5],
   [6, 7, 8],
@@ -343,16 +343,10 @@ let combination = [
 ]
 
 
-
-
-
-
-console.log(combination[3][1]);
-
-
-let scores = 0 
+let stepps = 0 
 let firstPlayer = 0
 let secondPlayer = 0
+let friendInfo = 0
 
 
 
@@ -361,39 +355,45 @@ for (let elem of changeDigital) {
   
   
   function check() {
-   
-    for (let j = 0; j < combination.length; j++) {
+    if (stepps%2==0) {
+      elem.innerHTML = 'X'
+      elem.classList.add('rotation')
+      elem.classList.remove('rotation2')
+    } else {
+      elem.innerHTML = 'О'
+      elem.classList.add('rotation')
+      elem.classList.remove('rotation2')
+    }
+    stepps++
+    if (stepps>=9) {
+      stepps =0
+      friendInfo++
+      return
+    }
+    
+    letter.innerHTML = `${friendInfo}`
+    elem.removeEventListener('click', check)
+    
+    for (let j = 0; j < combo.length; j++) {
+      
       let num = changeDigital
-      if(num[combination[j][0]].innerHTML=='X' && num[combination[j][1]].innerHTML=='X' && num[combination[j][2]].innerHTML=='X') {
+      if(num[combo[j][0]].innerHTML=='X' && num[combo[j][1]].innerHTML=='X' && num[combo[j][2]].innerHTML=='X') {
         console.log(`игрок X выиграл`);
         firstPlayer++
         person1.innerHTML = `${firstPlayer}`
-        elem.removeEventListener('click',check)
+        mainButton.classList.add('pointer')
+        return    
       }
-      if(num[combination[j][0]].innerHTML=='О' && num[combination[j][1]].innerHTML=='О' && num[combination[j][2]].innerHTML=='О') {
+      if(num[combo[j][0]].innerHTML=='О' && num[combo[j][1]].innerHTML=='О' && num[combo[j][2]].innerHTML=='О') {
         console.log(`игрок О выиграл`);
         secondPlayer++
         person2.innerHTML = `${secondPlayer}`
-        elem.removeEventListener('click',check)
+        mainButton.classList.add('pointer')
+        return  
        }
    }
  
 
-  if (scores%2==0) {
-    elem.innerHTML = 'X'
-    elem.classList.add('rotation')
-  } else {
-    elem.innerHTML = 'О'
-    elem.classList.add('rotation')
-  }
-  scores++
-  if (scores>=9) {
-    scores =0
-    friendInfo++
-    
-  }
-  letter.innerHTML = `${friendInfo}`
-  elem.removeEventListener('click', check)
  
 }
 
@@ -405,11 +405,13 @@ const letter = document.querySelector('#letter') as HTMLDivElement
 
 start.addEventListener ('click', ()=> {
  
-  scores =0
+  stepps =0
   elem.addEventListener('click', check)
    for (let i = 0; i < changeDigital.length; i++) {
      changeDigital[i].innerHTML = ''
-     elem.classList.remove('rotation')     
+     elem.classList.remove('rotation')   
+     elem.classList.add('rotation2')   
+     mainButton.classList.remove('pointer')
   }
 })
 
@@ -418,19 +420,7 @@ start.addEventListener ('click', ()=> {
 }
 
 
-
-// let btn  = document.getElementById('idButton') as HTMLElement 
-// btn.addEventListener ('click', ()=> {
-//   for (let i = 0; i < btn.childElementCount; i++) {
-//     if (btn.children[0].innerHTML == 'X' && btn.children[1].innerHTML == 'X' &&btn.children[2].innerHTML == 'X')
-//     // btn.children[1].innerHTML = 'X'
-//   console.log('winner!');
-//   console.log(scores);
-  
-//   }
-
-// })
-
+ 
 
 
 

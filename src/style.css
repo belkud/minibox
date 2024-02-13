@@ -67,7 +67,7 @@ transition: 2s;
   align-items: center;
   font-size: 3em;
   cursor: pointer;
-  /* pointer-events:initial; */
+  /* pointer-events:none; */
 }
 
 #crossAndZero>div:hover {
@@ -201,15 +201,24 @@ transition: 2s;
   min-height: 50px;
   min-width: 50px;
   cursor: pointer;
-  rotate: -180deg;
+  rotate: 0deg;
 }
 .rotation {
-  rotate: 0deg;
+  rotate: 180deg;
   transition: 2s !important;
 }
+.rotation2 {
+  rotate: 360deg;
+  transition: 2s !important;
+}
+.pointer{
+  pointer-events:none !important;
+
+}
+
 .extraButton:hover {
   transition:  .3s;
-  background-color: rgba(243, 143, 143, 0.5);
+  background-color: rgba(240, 221, 221, 0.5);
   /* background-color: rgb(220, 134, 73); */
 }
 
