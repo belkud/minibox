@@ -223,8 +223,8 @@ transform: scale(5em);
 max-width: 50px !important;
 max-height: 50px !important;
 background-color: orange;
-animation: size 2s ease-in-out  alternate ;
-animation-iteration-count: 3;
+animation: size 6s ease-in-out  alternate ;
+/* animation-iteration-count: 3; */
 /* animation: name duration timing-function delay iteration-count direction fill-mode; */
 }
 @keyframes size {
@@ -232,9 +232,25 @@ animation-iteration-count: 3;
     color: white;
     font-size: 2em;
   }
-  50% {
+  16% {
+    color: black;
+    font-size: 3.5em;
+  }
+  32% {
+    color: white;
+    font-size: 2em;
+  }
+  48% {
     color: red;
-    font-size: 4.7em;
+    font-size: 3.5em;
+  }
+  64% {
+    color: white;
+    font-size: 2em;
+  }
+  80% {
+    color: black;
+    font-size: 3.5em;
   }
   100% {
     color: white;
