@@ -359,36 +359,25 @@ let secondPlayer = 0
 
 for (let elem of changeDigital) {
   
-
+  
   function check() {
-    // for (let i = 0; i < changeDigital.length; i++) {
-    //  for (let j = 0; j < combination.length; j++) {
-    //     console.log('sdfsfdsdf');
-    // }
-    // }
-  // if (changeDigital[combination[0][0]].innerHTML=='X' ) {
-  //   console.log('winnn!');
-    
-  // }
-  let x = changeDigital
-  if (x[0].innerHTML=='X' && x[1].innerHTML=='X' && x[2].innerHTML=='X' ||
-  x[3].innerHTML=='X' && x[4].innerHTML=='X' && x[5].innerHTML=='X' ||
-  x[6].innerHTML=='X' && x[7].innerHTML=='X' && x[8].innerHTML=='X' ||
-  x[0].innerHTML=='X' && x[3].innerHTML=='X' && x[6].innerHTML=='X' ||
-  x[1].innerHTML=='X' && x[4].innerHTML=='X' && x[7].innerHTML=='X' ||
-  x[2].innerHTML=='X' && x[5].innerHTML=='X' && x[8].innerHTML=='X' ||
-  x[0].innerHTML=='X' && x[4].innerHTML=='X' && x[8].innerHTML=='X' ||
-  x[2].innerHTML=='X' && x[4].innerHTML=='X' && x[6].innerHTML=='X'
-  ) {
-    console.log(`игрок X выиграл`);
-    firstPlayer++
-    // console.log(firstPlayer);
-    
-    person1.innerHTML = firstPlayer
-    // person1.innerHTML == `${firstPlayer}`
+   
+    for (let j = 0; j < combination.length; j++) {
+      let num = changeDigital
+      if(num[combination[j][0]].innerHTML=='X' && num[combination[j][1]].innerHTML=='X' && num[combination[j][2]].innerHTML=='X') {
+        console.log(`игрок X выиграл`);
+        firstPlayer++
+        person1.innerHTML = `${firstPlayer}`
+        elem.removeEventListener('click',check)
+      }
+      if(num[combination[j][0]].innerHTML=='О' && num[combination[j][1]].innerHTML=='О' && num[combination[j][2]].innerHTML=='О') {
+        console.log(`игрок О выиграл`);
+        secondPlayer++
+        person2.innerHTML = `${secondPlayer}`
+        elem.removeEventListener('click',check)
+       }
    }
-
-
+ 
 
   if (scores%2==0) {
     elem.innerHTML = 'X'
