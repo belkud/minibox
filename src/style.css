@@ -201,14 +201,15 @@ transition: 2s;
   min-height: 50px;
   min-width: 50px;
   cursor: pointer;
+  rotate: -180deg;
 }
 .rotation {
-  rotate: 180deg;
+  rotate: 0deg;
   transition: 2s !important;
 }
 .extraButton:hover {
   transition:  .3s;
-  background-color: rgba(248, 117, 117, 0.5);
+  background-color: rgba(243, 143, 143, 0.5);
   /* background-color: rgb(220, 134, 73); */
 }
 

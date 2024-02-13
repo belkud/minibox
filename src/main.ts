@@ -322,13 +322,16 @@ const cross = document.querySelectorAll ('#crossAndZero')
 
 
 
+//! Крестики нолики 2.0
+
+
 let friendInfo = 0
 
 const changeDigital = document.querySelectorAll('.extraButton') 
-const person1 = document.querySelector('.person1') as HTMLDivElement
-const person2 = document.querySelector('.person2') as HTMLDivElement
+const person1 = document.querySelector('#person1') as HTMLDivElement
+const person2 = document.querySelector('#person2') as HTMLDivElement
 
-const combination = [
+let combination = [
   [0, 1, 2],
   [3, 4, 5],
   [6, 7, 8],
@@ -339,13 +342,54 @@ const combination = [
   [2, 4, 6]
 ]
 
-console.log(combination);
+
+
+
+
+
+console.log(combination[3][1]);
+
 
 let scores = 0 
+let firstPlayer = 0
+let secondPlayer = 0
+
+
+
 
 for (let elem of changeDigital) {
   
-    function check() {
+
+  function check() {
+    // for (let i = 0; i < changeDigital.length; i++) {
+    //  for (let j = 0; j < combination.length; j++) {
+    //     console.log('sdfsfdsdf');
+    // }
+    // }
+  // if (changeDigital[combination[0][0]].innerHTML=='X' ) {
+  //   console.log('winnn!');
+    
+  // }
+  let x = changeDigital
+  if (x[0].innerHTML=='X' && x[1].innerHTML=='X' && x[2].innerHTML=='X' ||
+  x[3].innerHTML=='X' && x[4].innerHTML=='X' && x[5].innerHTML=='X' ||
+  x[6].innerHTML=='X' && x[7].innerHTML=='X' && x[8].innerHTML=='X' ||
+  x[0].innerHTML=='X' && x[3].innerHTML=='X' && x[6].innerHTML=='X' ||
+  x[1].innerHTML=='X' && x[4].innerHTML=='X' && x[7].innerHTML=='X' ||
+  x[2].innerHTML=='X' && x[5].innerHTML=='X' && x[8].innerHTML=='X' ||
+  x[0].innerHTML=='X' && x[4].innerHTML=='X' && x[8].innerHTML=='X' ||
+  x[2].innerHTML=='X' && x[4].innerHTML=='X' && x[6].innerHTML=='X'
+  ) {
+    console.log(`игрок X выиграл`);
+    firstPlayer++
+    // console.log(firstPlayer);
+    
+    person1.innerHTML = firstPlayer
+    // person1.innerHTML == `${firstPlayer}`
+   }
+
+
+
   if (scores%2==0) {
     elem.innerHTML = 'X'
     elem.classList.add('rotation')
@@ -355,16 +399,13 @@ for (let elem of changeDigital) {
   }
   scores++
   if (scores>=9) {
-    // console.log('ничья!');
     scores =0
     friendInfo++
     
   }
   letter.innerHTML = `${friendInfo}`
   elem.removeEventListener('click', check)
-  // console.log(scores);
-  // console.log('friendInfo', `${friendInfo}`);
-
+ 
 }
 
 
@@ -379,8 +420,7 @@ start.addEventListener ('click', ()=> {
   elem.addEventListener('click', check)
    for (let i = 0; i < changeDigital.length; i++) {
      changeDigital[i].innerHTML = ''
-     
-     
+     elem.classList.remove('rotation')     
   }
 })
 
@@ -390,38 +430,28 @@ start.addEventListener ('click', ()=> {
 
 
 
-
-
-
-
-
- let peremennay = document.querySelectorAll('.extraButton') as NodeList
-  
-  for (let i = 0; i < peremennay.length; i++) {
-      peremennay[i].innerHTML = ''  
-  }
-
-
-
-
-
-
-
 // let btn  = document.getElementById('idButton') as HTMLElement 
 // btn.addEventListener ('click', ()=> {
 //   for (let i = 0; i < btn.childElementCount; i++) {
-//     if (scores==4)
-//     btn.children[i].innerHTML = '5'
-//   console.log('hi');
+//     if (btn.children[0].innerHTML == 'X' && btn.children[1].innerHTML == 'X' &&btn.children[2].innerHTML == 'X')
+//     // btn.children[1].innerHTML = 'X'
+//   console.log('winner!');
 //   console.log(scores);
   
 //   }
 
-
-   
-//   // btn.innerHTML = '7'
-  
 // })
+
+
+
+
+
+
+
+
+
+
+
 
 
 
