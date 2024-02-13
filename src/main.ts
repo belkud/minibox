@@ -378,6 +378,9 @@ for (let elem of changeDigital) {
       
       let num = changeDigital
       if(num[combo[j][0]].innerHTML=='X' && num[combo[j][1]].innerHTML=='X' && num[combo[j][2]].innerHTML=='X') {
+        num[combo[j][0]].classList.add('winCombo')
+        num[combo[j][1]].classList.add('winCombo')
+        num[combo[j][2]].classList.add('winCombo')
         console.log(`игрок X выиграл`);
         firstPlayer++
         person1.innerHTML = `${firstPlayer}`
@@ -385,6 +388,9 @@ for (let elem of changeDigital) {
         return    
       }
       if(num[combo[j][0]].innerHTML=='О' && num[combo[j][1]].innerHTML=='О' && num[combo[j][2]].innerHTML=='О') {
+        num[combo[j][0]].classList.add('winCombo')
+        num[combo[j][1]].classList.add('winCombo')
+        num[combo[j][2]].classList.add('winCombo')
         console.log(`игрок О выиграл`);
         secondPlayer++
         person2.innerHTML = `${secondPlayer}`
@@ -412,6 +418,7 @@ start.addEventListener ('click', ()=> {
      elem.classList.remove('rotation')   
      elem.classList.add('rotation2')   
      mainButton.classList.remove('pointer')
+     changeDigital[i].classList.remove('winCombo')
   }
 })
 

@@ -215,6 +215,36 @@ transition: 2s;
   pointer-events:none !important;
 
 }
+.winCombo{
+  /* color: rgb(177, 177, 199); */
+
+transition: .1s;
+transform: scale(5em);
+max-width: 50px !important;
+max-height: 50px !important;
+background-color: orange;
+animation: size 2s ease-in-out  alternate ;
+animation-iteration-count: 3;
+/* animation: name duration timing-function delay iteration-count direction fill-mode; */
+}
+@keyframes size {
+  0% {
+    color: white;
+    font-size: 2em;
+  }
+  50% {
+    color: red;
+    font-size: 4.7em;
+  }
+  100% {
+    color: white;
+    font-size: 2em;
+  }
+  
+}
+
+
+
 
 .extraButton:hover {
   transition:  .3s;
