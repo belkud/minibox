@@ -368,7 +368,7 @@ for (let elem of changeDigital) {
     if (stepps>=9) {
       stepps =0
       friendInfo++
-      return
+      // return
     }
     
     letter.innerHTML = `${friendInfo}`
