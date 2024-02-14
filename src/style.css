@@ -205,11 +205,11 @@ transition: 2s;
 }
 .rotation {
   rotate: 180deg;
-  transition: 2s !important;
+  transition: 2s ;
 }
 .rotation2 {
   rotate: 360deg;
-  transition: 2s !important;
+  transition: 2s ;
 }
 .pointer{
   pointer-events:none !important;
@@ -263,9 +263,9 @@ animation: size 6s ease-in-out  alternate ;
 
 
 .extraButton:hover {
-  transition:  .3s;
-  background-color: rgba(240, 221, 221, 0.5);
-  /* background-color: rgb(220, 134, 73); */
+  /* transition:  .1s !important; */
+  background-color:  rgba(240, 221, 221, 0.5);
+  background-color: rgb(36, 16, 2);
 }
 
 #start {
